@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Sửa Sinh Viên</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<h1>Sửa Thông Tin Sinh Viên</h1>
+	<form th:action="@{/students/students/edit/{id}(id=${student.id})}" method="post">
+		<label for="name">Tên:</label>
+		<input type="text" id="name" name="name" th:value="${student.name}" required><br>
+
+		<label for="address">Địa Chỉ:</label>
+		<input type="text" id="address" name="address" th:value="${student.address}"><br>
+
+		<label for="age">Tuổi:</label>
+		<input type="number" id="age" name="age" th:value="${student.age}" required><br>
+
+		<button type="submit">Lưu</button>
+	</form>
+</body>
+
+</html>
